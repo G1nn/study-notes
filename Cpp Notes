@@ -1,0 +1,66 @@
+Notes
+
+- unintialized variables. Always initialize your fundamental variables!
+- use std::cerr to print for debugging
+- function prototypes
+- definition vs. declararion
+- preprocessors: #include, #define (object-like macro), conditional compilation (#ifdef, #ifndef, #endif, #if 0)
+
+Variable Types
+
+- fundamental data types: bool, (char, wchar_t, char16_t, char32_t), (float, double, long double), (short, int, long, long long), no type
+- define vars close to the first use of that var
+- integer
+	- char is a special case
+	- division: fractional part dropped
+	- size_t: returned type from sizeof()
+	- use int when size doesn't matter, avoid unsigned generally
+- floating point number
+	- store very large or very small numbers, and those with fractional parts
+	- default to type double, f suffix for type float
+	- std::cout has a default precision of 6
+	- rounding error
+	- Inf, NaN
+- bool: true/false evaluates to integer 1/0
+- char: holds 1-byte integer, but interpreted as a ASCII character (0-127)
+- type conversion
+	- implicit: promotions (small to large) vs. conversions (large to small, or different types)
+	- explicit (casting): C-style casts (bad), static casts, const casts (bad), dynamic casts, reinterpret casts (bad)
+- constants: literal vs. symbolic
+	- Don't use hard coded number literals (magic numbers)!!
+	- instead use symbolic constants: const vars, must be initialized
+	- hold cross-file constants in a namespace in the header file
+- more types
+	- std::string
+	- enum
+
+Variable Scope
+(https://www.learncpp.com/cpp-tutorial/4-3a-scope-duration-and-linkage-summary/)
+
+- variable properties: lifetime (runtime), scope (compile-time), linkage (whether the var can be exported to another file)
+	- local variable: declared inside a function. automatic lifetime, block/local scope
+	- global variable: declared outside a function. static lifetime, file/global scope, must be forward declared to use in another file
+	- name hiding/shadowing: should be avoided
+	- internal/static variable, external variable
+	- non-const global vars have external linkage by default
+	- functions have default external linkage, can set to be internal by static
+	- non-const global vars are evil! their values can be changed by any function.
+- static keyword
+	- on global var: internal linkage
+	- on local var: static duration. Most common usage: unique identifier generator
+- namespace: global namespace, user-defined namespace, nested namespaces
+
+Operator
+
+- increment/decrement operate: prefix vs. suffix. prefix is preferred.
+- Don’t use a variable that has a side effect applied to it more than once in a given statement
+- Comma operator: solely used in for loops
+- conditional operator (?:)
+- comparison of floating point numbers can be inaccurate due to rounding errors. Use an epsilon function for floating point equality.
+
+
+
+
+
+
+

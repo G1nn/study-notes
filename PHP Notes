@@ -1,0 +1,69 @@
+Language
+
+- scripting 
+- must run on a server through an URL
+- dynamtic typing
+
+Syntax
+
+- end in ;
+- case-insensitive for functions
+- commenting #, //, /* */
+
+Variables
+
+- 8 types: boolean, int, float, strings; arrays, objects; resources, NULL
+- start with a $, case sensitive, characters + numbers + underscore
+- Predefined Vars: $_SERVER
+- Strings: concat: $str1 . $str2 . $number; strlen()
+- Single quoation marks: literal (faster), Double quotation marks: interpreted 
+- Numbers: round(), number_format()
+- global $var
+
+Constants
+
+- define ('NAME', value); //all caps, no $
+- value cannot be changed
+
+Condition
+
+- $var is true if it is not 0, empty string, FALSE or NULL.
+- isset($var) is true if $var is not NULL
+
+Arrays
+
+- indexed (number as key) or associative (string as key) or mixed
+- superglobal variables: $_GET, $_POST, $_REQUEST, $_SERVER, $_ENV, $_SESSION, and $_COOKIE
+- print associative arrays: echo "IL is {$states['IL']}.";
+- creating array: $arr[] = "ele"; or $arr["key"] = "ele"; or $arr = array(...);
+- optional initialization: $a = array();
+- loop: foreach ($arr as $ele){} or foreach ($array as $key => $value){}
+- length: count($arr); range(); is_array()
+- use a 2D array for a series of checkbox/select values in the form: $_POST[$2dArr]
+- conversion with strings: explord(separator, $str), implode(glue, $array)
+
+Functions
+
+- function function_name(){}
+- optional function params
+- return multiple values: use an array. list($v1, $v2) = some_function();
+
+Form Validation
+
+- not empty -> right type (string, numeric, ect) -> right format (email) or specific acceptable value
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
